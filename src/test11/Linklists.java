@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Stack;
 public class Linklists {
 
-	private ListNode head;
+	private static ListNode head;
 	private ListNode tail;
 	private int size; 
 	
@@ -21,6 +21,7 @@ public class Linklists {
 		{
 			System.out.println(number);
 		}
+		listi.FindKthToTail(head,2);
 		
 	}
 	
@@ -39,6 +40,35 @@ public class Linklists {
 			tail = node;
 		}
 		
+		return head;
+	}
+	
+	
+	public ListNode FindKthToTail(ListNode head,int k)
+	{
+		if(k < 1 || head == null)
+		{	
+			return null;
+		}
+		ListNode firstPointer = head; 
+		for(int i = 0; i < (k-1); ++i)
+		{
+			if(firstPointer.next != null)
+			{
+				firstPointer = firstPointer.next;
+			}
+			else
+			{
+				return null;
+			}
+		}
+		
+		while(firstPointer.next != null )
+		{
+			head = head.next;
+			firstPointer = firstPointer.next;
+		}
+
 		return head;
 	}
 	
