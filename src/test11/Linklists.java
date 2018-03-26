@@ -15,13 +15,13 @@ public class Linklists {
 		listi.createlinklist(12);
 		listi.createlinklist(14);
 		listi.createlinklist(18);
-		ListNode a = listi.createlinklist(19);
-		for(Integer number : listi.printListnode(a))
-		{
-			System.out.println(number);
-		}
-		listi.FindKthToTail(head,2);
-		
+	//	ListNode a = listi.createlinklist(19);
+	//	for(Integer number : listi.printListnode(a))
+	//	{
+	//		System.out.println(number);
+	//	}
+	//	listi.FindKthToTail(head,2);
+		listi.ReverseList(head);
 	}
 	
 	
@@ -42,6 +42,22 @@ public class Linklists {
 		return head;
 	}
 	
+	
+	
+	
+/*	public insert(ListNode head,  )
+	{
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+*/	
+
 	
 	public ListNode FindKthToTail(ListNode head,int k)
 	{
@@ -69,6 +85,26 @@ public class Linklists {
 		}
 
 		return head;
+	}
+	
+	
+	public ListNode ReverseList(ListNode head)
+	{
+		ListNode reverseHead = null;
+		ListNode pre = null;
+		ListNode cur = head;
+		ListNode next = null;
+		while(cur != null)
+		{
+			reverseHead = cur;
+			next = cur.next;
+			cur.next = pre;
+			pre = cur;
+			cur = next;
+			
+		}
+		
+		return reverseHead;
 	}
 	
 	
