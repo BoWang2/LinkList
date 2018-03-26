@@ -7,8 +7,7 @@ public class Linklists {
 
 	private static ListNode head;
 	private ListNode tail;
-	private int size; 
-	
+
 	public static void main(String [] args)
 	{
 		//Scanner scanner = new Scanner(System.in);
